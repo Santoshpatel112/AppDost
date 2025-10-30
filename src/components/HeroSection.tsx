@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Sparkles, Clock, Shield } from "lucide-react";
+import StatsCards from "@/components/StatsCards";
 
 const HeroSection = () => {
   const fadeIn = {
@@ -73,34 +74,14 @@ const HeroSection = () => {
             </div>
           </motion.div>
 
-          {/* Right Content - Stats */}
+          {/* Right Content - Animated Stats Cards */}
           <motion.div
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="grid grid-cols-2 gap-6"
+            className="relative"
           >
-            {[
-              { number: "10+", label: "Web Projects" },
-              { number: "4+", label: "Android Apps" },
-              { number: "1", label: "CRM Project" },
-              { number: "2025", label: "Founded Year" },
-            ].map((stat, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, scale: 0.8 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ delay: 0.3 + index * 0.1, duration: 0.4 }}
-                className="bg-card border rounded-2xl p-6 hover:shadow-lg transition-shadow duration-300"
-              >
-                <div className="gradient-text text-4xl md:text-5xl font-bold mb-2">
-                  {stat.number}
-                </div>
-                <div className="text-muted-foreground font-medium uppercase text-sm tracking-wide">
-                  {stat.label}
-                </div>
-              </motion.div>
-            ))}
+            <StatsCards />
           </motion.div>
         </div>
       </div>
