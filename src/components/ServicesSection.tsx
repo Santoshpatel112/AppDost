@@ -21,36 +21,42 @@ const ServicesSection = () => {
       title: "Web Development",
       description: "Responsive and scalable web applications tailored to your business needs.",
       features: ["Responsive Design", "E-commerce Solutions", "Progressive Web Apps"],
+      gradient: "from-blue-500 to-cyan-500",
     },
     {
       icon: Smartphone,
       title: "Android App Development",
       description: "Custom Android applications built with the latest technologies to bring your ideas to life.",
       features: ["Native & Hybrid Apps", "Play Store Deployment", "Maintenance & Support"],
+      gradient: "from-green-500 to-emerald-500",
     },
     {
       icon: Palette,
       title: "UI/UX Development",
       description: "Beautiful, intuitive user interfaces that enhance user experience and engagement.",
       features: ["User Research", "Wireframing", "Brand Identity"],
+      gradient: "from-purple-500 to-pink-500",
     },
     {
       icon: Database,
       title: "CRM Software",
       description: "Comprehensive CRM solutions to manage customer relationships and boost productivity.",
       features: ["Custom Development", "Integration Services", "Training & Support"],
+      gradient: "from-orange-500 to-red-500",
     },
     {
       icon: Cloud,
       title: "Cloud Solutions",
       description: "Scalable cloud infrastructure and migration services for modern businesses.",
       features: ["AWS, Azure, GCP", "Migration Services", "Cloud Optimization"],
+      gradient: "from-indigo-500 to-blue-500",
     },
     {
       icon: Shield,
       title: "Cybersecurity",
       description: "Protect your digital assets with comprehensive security solutions and best practices.",
       features: ["Security Audits", "Threat Detection", "Compliance Management"],
+      gradient: "from-red-500 to-rose-500",
     },
   ];
 

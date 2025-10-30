@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
-import { Users, Award, Clock, Lightbulb } from "lucide-react";
+import { Users, Award, Clock, Lightbulb, Heart, Zap } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const AboutSection = () => {
@@ -13,21 +13,25 @@ const AboutSection = () => {
       icon: Lightbulb,
       title: "User-Centric Design",
       description: "Intuitive UI/UX that guarantees user satisfaction and engagement",
+      gradient: "from-yellow-500 to-orange-500",
     },
     {
-      icon: Award,
+      icon: Zap,
       title: "Cutting-Edge Technology",
       description: "Latest frameworks and tools for scalable, robust solutions",
+      gradient: "from-blue-500 to-cyan-500",
     },
     {
       icon: Clock,
       title: "24/7 Support Available",
       description: "Round-the-clock support to ensure your success",
+      gradient: "from-purple-500 to-pink-500",
     },
     {
-      icon: Users,
+      icon: Heart,
       title: "Client-Focused Approach",
       description: "Your success is our priority, every step of the way",
+      gradient: "from-red-500 to-rose-500",
     },
   ];
 
@@ -59,14 +63,30 @@ const AboutSection = () => {
           transition={{ duration: 0.6, delay: 0.2 }}
           className="grid md:grid-cols-2 gap-8 mb-16 max-w-2xl mx-auto"
         >
-          <div className="bg-card border rounded-2xl p-8 text-center">
+          <motion.div 
+            className="bg-card border rounded-2xl p-8 text-center hover:shadow-2xl transition-all duration-300 hover:-translate-y-2"
+            whileHover={{ scale: 1.05 }}
+          >
+            <div className="flex items-center justify-center mb-4">
+              <div className="bg-gradient-to-br from-green-500 to-emerald-600 rounded-full p-4">
+                <Award className="h-8 w-8 text-white" />
+              </div>
+            </div>
             <div className="gradient-text text-5xl font-bold mb-2">100%</div>
             <div className="text-muted-foreground font-medium">Client Satisfaction</div>
-          </div>
-          <div className="bg-card border rounded-2xl p-8 text-center">
+          </motion.div>
+          <motion.div 
+            className="bg-card border rounded-2xl p-8 text-center hover:shadow-2xl transition-all duration-300 hover:-translate-y-2"
+            whileHover={{ scale: 1.05 }}
+          >
+            <div className="flex items-center justify-center mb-4">
+              <div className="bg-gradient-to-br from-blue-500 to-purple-600 rounded-full p-4">
+                <Users className="h-8 w-8 text-white" />
+              </div>
+            </div>
             <div className="gradient-text text-5xl font-bold mb-2">15+</div>
             <div className="text-muted-foreground font-medium">Projects Delivered</div>
-          </div>
+          </motion.div>
         </motion.div>
 
         {/* Features Grid */}
@@ -77,10 +97,11 @@ const AboutSection = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: 0.1 * index }}
-              className="bg-card border rounded-2xl p-6 hover:shadow-xl transition-all duration-300 hover:-translate-y-2"
+              whileHover={{ scale: 1.05, y: -8 }}
+              className="bg-card border rounded-2xl p-6 hover:shadow-xl transition-all duration-300 group"
             >
-              <div className="gradient-primary rounded-xl w-12 h-12 flex items-center justify-center mb-4">
-                <feature.icon className="h-6 w-6 text-white" />
+              <div className={`bg-gradient-to-br ${feature.gradient} rounded-xl w-14 h-14 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300`}>
+                <feature.icon className="h-7 w-7 text-white" />
               </div>
               <h3 className="text-xl font-bold mb-3">{feature.title}</h3>
               <p className="text-muted-foreground">{feature.description}</p>
