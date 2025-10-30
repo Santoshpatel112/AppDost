@@ -1,8 +1,8 @@
-import { Mail, Linkedin, Github, Twitter } from "lucide-react";
+import { Mail, LinkedinIcon, Github, Twitter } from "lucide-react";
 
 const Footer = () => {
   const socialLinks = [
-    { icon: Linkedin, href: "#", label: "LinkedIn" },
+    { icon: LinkedinIcon, href: "#", label: "LinkedIn" },
     { icon: Github, href: "#", label: "GitHub" },
     { icon: Twitter, href: "#", label: "Twitter" },
   ];
@@ -27,11 +27,15 @@ const Footer = () => {
               <span className="text-2xl font-bold gradient-text">AppDost</span>
             </div>
             <p className="text-muted-foreground">
-              Transform Your Ideas Into Digital Reality. Your trusted partner for comprehensive IT solutions.
+              Transform Your Ideas Into Digital Reality. Your trusted partner
+              for comprehensive IT solutions.
             </p>
             <div className="flex items-center space-x-2 text-muted-foreground">
               <Mail className="h-4 w-4" />
-              <a href="mailto:hr@appdost.in" className="hover:text-primary transition-colors">
+              <a
+                href="mailto:hr@appdost.in"
+                className="hover:text-primary transition-colors"
+              >
                 hr@appdost.in
               </a>
             </div>
@@ -78,7 +82,7 @@ const Footer = () => {
             © 2025 AppDost. All Rights Reserved.
           </p>
           <p className="text-muted-foreground text-sm">
-            Founded in 2025 | Made with ❤️ in India
+            Founded in 2025 | Made with ❤️ by AppDost
           </p>
         </div>
       </div>
